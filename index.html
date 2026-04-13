@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مُوجز 24 | أخبار عربية على مدار الساعة</title>
+  <meta name="description" content="بوابتك الأولى لآخر الأخبار المحلية والعربية والدولية مع راديو حي وبودكاست متميز">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress" id="readingProgress"></div>
+ 
+  <!-- Side Ads (desktop only) -->
+  <div class="side-ad side-ad-left">
+    <div class="ad-label">إعلان</div>
+    <div class="ad-image-wrap">
+      <div class="ad-img-placeholder" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
+        <div class="ad-content-overlay">
+          <p class="ad-title">المتحف المصري الكبير</p>
+          <p class="ad-sub">اكتشف حضارة 7000 سنة - تذاكر مخفضة</p>
+          <div class="ad-btn">احجز الآن</div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="side-ad side-ad-right">
+    <div class="ad-label">إعلان</div>
+    <div class="ad-image-wrap">
+      <div class="ad-img-placeholder" style="background: linear-gradient(135deg, #2d1b69 0%, #11998e 100%);">
+        <div class="ad-content-overlay">
+          <p class="ad-title">مستشفى الشفا والقلب</p>
+          <p class="ad-sub">أحدث تقنيات جراحة القلب - رعاية متكاملة</p>
+          <div class="ad-btn">تواصل معنا</div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" id="siteHeader">
+    <!-- Top utility bar -->
+    <div class="header-top">
+      <div class="container">
+        <div class="header-top-inner">
+          <div class="header-meta">
+            <span class="meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+              <span id="currentDate">الثلاثاء، 9 أبريل 2026</span>
+            </span>
+            <span class="meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span id="currentTime">9:29 مساءً</span>
+            </span>
+          </div>
+          <div class="header-controls">
+            <div class="font-size-controls">
+              <button class="ctrl-btn" id="fontDecrease" title="تصغير الخط">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 13h6"/><path d="m2 16 4.5-9 4.5 9"/><path d="M18 7v9"/><path d="m14 12 4 4 4-4"/></svg>
+              </button>
+              <button class="ctrl-btn" id="fontIncrease" title="تكبير الخط">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 13h6"/><path d="m2 16 4.5-9 4.5 9"/><path d="M18 16V7"/><path d="m14 11 4-4 4 4"/></svg>
+              </button>
+            </div>
+            <!-- Dark/Light Mode Toggle -->
+            <button class="theme-toggle" id="themeToggle" title="تغيير المظهر" aria-label="تبديل الوضع الداكن">
+              <div class="toggle-icon sun-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+              </div>
+              <div class="toggle-icon moon-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Main nav bar -->
+    <div class="header-main">
+      <div class="container">
+        <div class="header-main-inner">
+          <!-- Logo -->
+          <div class="site-logo">
+            <h1 class="logo-text">
+              <span class="logo-primary">مُوجز</span><span class="logo-accent"> 24</span>
+            </h1>
+            <p class="logo-tagline">#إعلام_يترك_أثراً</p>
+          </div>
+ 
+          <!-- Navigation (desktop) — matches screenshots exactly -->
+          <nav class="main-nav" id="mainNav">
+ 
+            <!-- غرفة الأخبار — with large dropdown -->
+            <div class="nav-group has-dropdown">
+              <button class="nav-item nav-btn">
+                <span class="nav-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>
+                </span>
+                <span class="nav-label">غرفة الأخبار</span>
+                <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="nav-dropdown">
+                <div class="dropdown-section">
+                  <span class="dropdown-section-title">أخبار الساعة</span>
+                  <a href="#" class="dropdown-item">عاجل</a>
+                  <a href="#" class="dropdown-item">عالمي</a>
+                  <a href="#" class="dropdown-item">سياسة</a>
+                  <a href="#" class="dropdown-item">اقتصاد</a>
+                </div>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-section">
+                  <span class="dropdown-section-title">أخبار المنوعات</span>
+                  <a href="#" class="dropdown-item">رياضة</a>
+                  <a href="#" class="dropdown-item">فن</a>
+                  <a href="#" class="dropdown-item">صحة</a>
+                  <a href="#" class="dropdown-item">ثقافة</a>
+                  <a href="#" class="dropdown-item">مقالات</a>
+                  <a href="#" class="dropdown-item">تقارير</a>
+                  <a href="#" class="dropdown-item">أسعار وأسواق</a>
+                  <a href="#" class="dropdown-item">دين وحياة</a>
+                  <a href="#" class="dropdown-item">سياحة وطيران</a>
+                  <a href="#" class="dropdown-item">كاريكاتير</a>
+                </div>
+              </div>
+            </div>
+ 
+            <!-- حياة كريمة — no dropdown -->
+            <div class="nav-group">
+              <a href="#" class="nav-item">
+                <span class="nav-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                </span>
+                <span class="nav-label">حياة كريمة</span>
+              </a>
+            </div>
+ 
+            <!-- مدارس وجامعات — with dropdown -->
+            <div class="nav-group has-dropdown">
+              <button class="nav-item nav-btn">
+                <span class="nav-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+                </span>
+                <span class="nav-label">مدارس وجامعات</span>
+                <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="nav-dropdown">
+                <a href="#" class="dropdown-item">كواليس التعليم</a>
+                <a href="#" class="dropdown-item">سينما التعليم</a>
+              </div>
+            </div>
+ 
+            <!-- المستقبل الرقمي — with dropdown -->
+            <div class="nav-group has-dropdown">
+              <button class="nav-item nav-btn">
+                <span class="nav-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+                </span>
+                <span class="nav-label">المستقبل الرقمي</span>
+                <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="nav-dropdown">
+                <a href="#" class="dropdown-item">كود الخبر</a>
+                <a href="#" class="dropdown-item">عين التقنية</a>
+              </div>
+            </div>
+ 
+            <!-- قدوة مصرية — no dropdown -->
+            <div class="nav-group">
+              <a href="#" class="nav-item">
+                <span class="nav-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>
+                </span>
+                <span class="nav-label">قدوة مصرية</span>
+              </a>
+            </div>
+ 
+            <!-- وثائقيات — NO dropdown, no arrow -->
+            <div class="nav-group">
+              <a href="#" class="nav-item">
+                <span class="nav-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M3 7.5h4"/><path d="M3 12h18"/><path d="M3 16.5h4"/><path d="M17 3v18"/><path d="M17 7.5h4"/><path d="M17 16.5h4"/></svg>
+                </span>
+                <span class="nav-label">وثائقيات</span>
+                <span class="nav-sublabel">(الحقيقة في مشاهد)</span>
+              </a>
+            </div>
+ 
+            <!-- صوت الشارع — with dropdown -->
+            <div class="nav-group has-dropdown">
+              <button class="nav-item nav-btn">
+                <span class="nav-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+                </span>
+                <span class="nav-label">صوت الشارع</span>
+                <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="nav-dropdown">
+                <a href="#" class="dropdown-item">حوادث</a>
+                <a href="#" class="dropdown-item">عين الحقيقة</a>
+              </div>
+            </div>
+ 
+            <!-- تراثنا — with dropdown -->
+            <div class="nav-group has-dropdown">
+              <button class="nav-item nav-btn">
+                <span class="nav-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>
+                </span>
+                <span class="nav-label">تراثنا</span>
+                <span class="nav-sublabel">(نبض الحضارة)</span>
+                <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="nav-dropdown">
+                <a href="#" class="dropdown-item">أصل الحكاية</a>
+                <a href="#" class="dropdown-item">حكاية وكادر</a>
+              </div>
+            </div>
+ 
+            <!-- أثير — with dropdown (Radio On Air + بودكاست) -->
+            <div class="nav-group has-dropdown">
+              <button class="nav-item nav-btn">
+                <span class="nav-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+                </span>
+                <span class="nav-label">أثير</span>
+                <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="nav-dropdown">
+                <a href="#" class="dropdown-item dropdown-item-radio">
+                  <span class="radio-live-dot"></span>
+                  Radio On Air
+                </a>
+                <a href="#" class="dropdown-item dropdown-item-podcast">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg>
+                  بودكاست
+                </a>
+              </div>
+            </div>
+ 
+          </nav>
+ 
+          <!-- Header actions -->
+          <div class="header-actions">
+            <a href="blog.html" class="blog-btn">المدونة</a>
+            <button class="search-btn" id="searchToggle">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </button>
+            <a href="#" class="live-btn">
+              <span class="live-dot">
+                <span class="ping"></span>
+                <span class="dot"></span>
+              </span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg>
+              LIVE
+            </a>
+            <!-- Hamburger for mobile -->
+            <button class="hamburger" id="hamburger" aria-label="القائمة">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Search overlay -->
+    <div class="search-overlay" id="searchOverlay">
+      <div class="container">
+        <div class="search-inner">
+          <input type="search" placeholder="ابحث في الأخبار..." id="searchInput" class="search-input">
+          <button class="search-close" id="searchClose">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+ 
+  <!-- ===== BREAKING NEWS TICKER ===== -->
+  <div class="breaking-news">
+    <div class="container">
+      <div class="breaking-inner">
+        <div class="breaking-label">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+          عاجل
+        </div>
+        <div class="ticker-wrap">
+          <div class="ticker-track" id="tickerTrack">
+            <span>● الذهب يسجّل أعلى مستوى تاريخي متجاوزاً 3050 دولاراً للأونصة</span>
+            <span>● روسيا وأوكرانيا: جولة مفاوضات جديدة في إسطنبول بوساطة تركية</span>
+            <span>● قمة عربية طارئة في الرياض لبحث تطورات الأوضاع في غزة ولبنان</span>
+            <span>● مصر تفتتح أكبر محطة تحلية مياه في الشرق الأوسط بطاقة مليون متر مكعب يومياً</span>
+            <span>● ترامب يوقّع أمراً تنفيذياً جديداً بشأن الرسوم الجمركية على الصين وأوروبا</span>
+            <span>● السعودية تعلن عن مشروع طاقة شمسية عملاق بقيمة 50 مليار دولار</span>
+            <span>● إيلون ماسك يعلن عن إطلاق أول رحلة مأهولة إلى المريخ عام 2028</span>
+            <span>● فيضانات عارمة تجتاح جنوب البرازيل وإجلاء أكثر من 200 ألف شخص</span>
+            <span>● أبل تكشف عن نظارات الواقع المعزز الجديدة بسعر أقل من المتوقع</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="site-main">
+    <div class="container">
+ 
+      <!-- Hero Grid -->
+      <section class="hero-section">
+        <!-- Left column: Latest news -->
+        <aside class="latest-sidebar" data-animate>
+          <div class="card-widget">
+            <h3 class="widget-title">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              آخر الأخبار
+            </h3>
+            <div class="latest-list">
+              <article class="latest-item news-card-hover">
+                <div class="latest-img">
+                  <img src="https://images.unsplash.com/photo-1504711434969-e33886168d8c?w=120&h=90&fit=crop" alt="أخبار الشرق الأوسط" loading="lazy">
+                </div>
+                <div class="latest-info">
+                  <span class="tag tag-urgent">عاجل</span>
+                  <h4>إسرائيل تفعّل القبة الحديدية بعد إطلاق صواريخ من الجنوب اللبناني</h4>
+                  <time>٧ أبريل ٢٠٢٦</time>
+                </div>
+              </article>
+              <article class="latest-item news-card-hover">
+                <div class="latest-img">
+                  <img src="https://images.unsplash.com/photo-1529243856184-fd5465488984?w=120&h=90&fit=crop" alt="مصر" loading="lazy">
+                </div>
+                <div class="latest-info">
+                  <span class="tag tag-politics">سياسة</span>
+                  <h4>مصر تطلق مبادرة دبلوماسية جديدة لوقف إطلاق النار في غزة</h4>
+                  <time>٧ أبريل ٢٠٢٦</time>
+                </div>
+              </article>
+              <article class="latest-item news-card-hover">
+                <div class="latest-img">
+                  <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=120&h=90&fit=crop" alt="غزة" loading="lazy">
+                </div>
+                <div class="latest-info">
+                  <span class="tag tag-urgent">عاجل</span>
+                  <h4>غزة تحت القصف: الأوضاع الإنسانية تزداد سوءاً مع استمرار الحصار</h4>
+                  <time>٧ أبريل ٢٠٢٦</time>
+                </div>
+              </article>
+              <article class="latest-item news-card-hover">
+                <div class="latest-img">
+                  <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=120&h=90&fit=crop" alt="اقتصاد" loading="lazy">
+                </div>
+                <div class="latest-info">
+                  <span class="tag tag-economy">اقتصاد</span>
+                  <h4>الكويت تعلن عن خطة اقتصادية طموحة بقيمة 100 مليار دولار</h4>
+                  <time>٦ أبريل ٢٠٢٦</time>
+                </div>
+              </article>
+            </div>
+          </div>
+        </aside>
+ 
+        <!-- Center: Hero article -->
+        <div class="hero-article" data-animate>
+          <article class="hero-card">
+            <div class="hero-img-wrap">
+              <img src="https://images.unsplash.com/photo-1494522855154-9297ac14b55f?w=800&h=500&fit=crop" alt="إيران تعلن عن تجارب صاروخية جديدة" loading="lazy" class="hero-img">
+              <div class="hero-gradient"></div>
+              <div class="hero-content">
+                <span class="tag tag-urgent hero-tag">عاجل</span>
+                <h2 class="hero-title">إيران تعلن عن تجارب صاروخية جديدة وسط تصاعد التوترات الإقليمية</h2>
+                <p class="hero-excerpt">أجرت إيران تجارب صاروخية باليستية جديدة في مناورات عسكرية واسعة النطاق، مما أثار قلقاً دولياً بشأن تصاعد التوترات في المنطقة.</p>
+                <div class="hero-meta">
+                  <span class="meta-item"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>٧ أبريل ٢٠٢٦</span>
+                  <span class="meta-item"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>45,200</span>
+                  <span class="meta-item"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>1 دقيقة قراءة</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+ 
+        <!-- Right column: Most read -->
+        <aside class="most-read-sidebar" data-animate>
+          <div class="card-widget">
+            <h3 class="widget-title">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+              الأكثر قراءة
+            </h3>
+            <div class="most-read-list">
+              <article class="most-read-item news-card-hover">
+                <span class="rank-num">01</span>
+                <div class="most-read-info">
+                  <h4>غزة تحت القصف: الأوضاع الإنسانية تزداد سوءاً مع استمرار الحصار</h4>
+                  <span class="views-count"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>52,300 مشاهدة</span>
+                </div>
+              </article>
+              <article class="most-read-item news-card-hover">
+                <span class="rank-num">02</span>
+                <div class="most-read-info">
+                  <h4>إيران تعلن عن تجارب صاروخية جديدة وسط تصاعد التوترات الإقليمية</h4>
+                  <span class="views-count"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>45,200 مشاهدة</span>
+                </div>
+              </article>
+              <article class="most-read-item news-card-hover">
+                <span class="rank-num">03</span>
+                <div class="most-read-info">
+                  <h4>إسرائيل تفعّل القبة الحديدية بعد إطلاق صواريخ من الجنوب اللبناني</h4>
+                  <span class="views-count"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>38,900 مشاهدة</span>
+                </div>
+              </article>
+              <article class="most-read-item news-card-hover">
+                <span class="rank-num">04</span>
+                <div class="most-read-info">
+                  <h4>مصر تطلق مبادرة دبلوماسية جديدة لوقف إطلاق النار في غزة</h4>
+                  <span class="views-count"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>32,100 مشاهدة</span>
+                </div>
+              </article>
+              <article class="most-read-item news-card-hover">
+                <span class="rank-num">05</span>
+                <div class="most-read-info">
+                  <h4>أمريكا ترسل حاملة طائرات إضافية إلى شرق المتوسط</h4>
+                  <span class="views-count"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>31,600 مشاهدة</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </aside>
+      </section>
+ 
+      <!-- News + Sidebar Section -->
+      <section class="content-section">
+        <!-- Main news feed -->
+        <div class="news-feed">
+          <h2 class="section-title">آخر الأخبار</h2>
+          <div class="news-list">
+ 
+            <article class="news-card-h news-card-hover" data-animate>
+              <div class="news-card-img">
+                <img src="https://images.unsplash.com/photo-1578576537575-3e23e6a31b5a?w=280&h=200&fit=crop" alt="واشنطن" loading="lazy">
+              </div>
+              <div class="news-card-body">
+                <span class="tag tag-world">عالمي</span>
+                <h3>واشنطن تفرض عقوبات جديدة على إيران بسبب برنامجها النووي</h3>
+                <p class="news-excerpt">الإدارة الأمريكية تعلن عن حزمة عقوبات مشددة تستهدف قطاعات حيوية في الاقتصاد الإيراني.</p>
+                <div class="news-meta">
+                  <span><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>٦ أبريل ٢٠٢٦</span>
+                  <span><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>24,500</span>
+                  <span><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>1 دقيقة قراءة</span>
+                </div>
+              </div>
+            </article>
+ 
+            <article class="news-card-h news-card-hover" data-animate>
+              <div class="news-card-img">
+                <img src="https://images.unsplash.com/photo-1586521995568-39abaa0c2311?w=280&h=200&fit=crop" alt="مجلس الأمن" loading="lazy">
+              </div>
+              <div class="news-card-body">
+                <span class="tag tag-world">عالمي</span>
+                <h3>مجلس الأمن يعقد جلسة طارئة لمناقشة التصعيد في الشرق الأوسط</h3>
+                <p class="news-excerpt">دعوات دولية لضبط النفس ووقف فوري لإطلاق النار في جميع الجبهات.</p>
+                <div class="news-meta">
+                  <span><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>٦ أبريل ٢٠٢٦</span>
+                  <span><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>19,200</span>
+                  <span><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>1 دقيقة قراءة</span>
+                </div>
+              </div>
+            </article>
+ 
+            <article class="news-card-h news-card-hover" data-animate>
+              <div class="news-card-img">
+                <img src="https://images.unsplash.com/photo-1549925245-8a7a58b7b4a4?w=280&h=200&fit=crop" alt="الحدود" loading="lazy">
+              </div>
+              <div class="news-card-body">
+                <span class="tag tag-politics">سياسة</span>
+                <h3>مصر تعزز قواتها على الحدود مع غزة لتأمين المعابر الإنسانية</h3>
+                <p class="news-excerpt">الجيش المصري ينشر قوات إضافية لتأمين دخول المساعدات الإنسانية عبر معبر رفح.</p>
+                <div class="news-meta">
+                  <span><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>٥ أبريل ٢٠٢٦</span>
+                  <span><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>28,300</span>
+                  <span><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>1 دقيقة قراءة</span>
+                </div>
+              </div>
+            </article>
+ 
+            <article class="news-card-h news-card-hover" data-animate>
+              <div class="news-card-img">
+                <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=280&h=200&fit=crop" alt="الخليج" loading="lazy">
+              </div>
+              <div class="news-card-body">
+                <span class="tag tag-politics">سياسة</span>
+                <h3>الكويت تستدعي سفيرها من طهران احتجاجاً على التجارب الصاروخية</h3>
+                <p class="news-excerpt">دول الخليج تعبر عن قلقها الشديد إزاء التصعيد العسكري الإيراني.</p>
+                <div class="news-meta">
+                  <span><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>٥ أبريل ٢٠٢٦</span>
+                  <span><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>15,800</span>
+                  <span><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>1 دقيقة قراءة</span>
+                </div>
+              </div>
+            </article>
+ 
+            <article class="news-card-h news-card-hover" data-animate>
+              <div class="news-card-img">
+                <img src="https://images.unsplash.com/photo-1569025592562-27c9a58e88c6?w=280&h=200&fit=crop" alt="البحرية الأمريكية" loading="lazy">
+              </div>
+              <div class="news-card-body">
+                <span class="tag tag-world">عالمي</span>
+                <h3>أمريكا ترسل حاملة طائرات إضافية إلى شرق المتوسط</h3>
+                <p class="news-excerpt">البنتاغون يعلن عن تعزيز الوجود العسكري الأمريكي في المنطقة لردع أي تصعيد.</p>
+                <div class="news-meta">
+                  <span><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>٤ أبريل ٢٠٢٦</span>
+                  <span><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>31,600</span>
+                  <span><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>1 دقيقة قراءة</span>
+                </div>
+              </div>
+            </article>
+ 
+          </div>
+        </div>
+ 
+        <!-- Sidebar widgets -->
+        <aside class="content-sidebar">
+ 
+          <!-- Trending -->
+          <div class="card-widget" data-animate>
+            <h3 class="widget-title widget-title-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+              الأكثر تداولاً الآن
+            </h3>
+            <div class="trending-list">
+              <div class="trending-item news-card-hover">
+                <span class="trend-num">1</span>
+                <div class="trend-info">
+                  <div class="trend-tags"><span class="tag tag-world tag-sm">تريند</span></div>
+                  <h4>أزمة إيران وإسرائيل تتصاعد.. هل نقترب من حرب شاملة؟</h4>
+                  <span class="trend-count">128,000 تفاعل</span>
+                </div>
+              </div>
+              <div class="trending-item news-card-hover">
+                <span class="trend-num">2</span>
+                <div class="trend-info">
+                  <div class="trend-tags"><span class="tag tag-politics tag-sm">تعليم</span></div>
+                  <h4>قرارات الثانوية العامة الجديدة تشعل السوشيال ميديا</h4>
+                  <span class="trend-count">95,000 تفاعل</span>
+                </div>
+              </div>
+              <div class="trending-item news-card-hover">
+                <span class="trend-num">3</span>
+                <div class="trend-info">
+                  <div class="trend-tags"><span class="tag tag-economy tag-sm">اقتصاد</span></div>
+                  <h4>انهيار مفاجئ في أسعار الذهب عالمياً</h4>
+                  <span class="trend-count">87,000 تفاعل</span>
+                </div>
+              </div>
+              <div class="trending-item news-card-hover">
+                <span class="trend-num">4</span>
+                <div class="trend-info">
+                  <div class="trend-tags"><span class="tag tag-world tag-sm">تكنولوجيا</span></div>
+                  <h4>مصر تفتتح أكبر محطة طاقة شمسية في الشرق الأوسط</h4>
+                  <span class="trend-count">76,000 تفاعل</span>
+                </div>
+              </div>
+              <div class="trending-item news-card-hover">
+                <span class="trend-num">5</span>
+                <div class="trend-info">
+                  <div class="trend-tags"><span class="tag tag-accent tag-sm">فن</span></div>
+                  <h4>فنان مصري يحصد جائزة عالمية في مهرجان كان</h4>
+                  <span class="trend-count">65,000 تفاعل</span>
+                </div>
+              </div>
+            </div>
+          </div>
+ 
+          <!-- Poll widget -->
+          <div class="card-widget poll-widget" data-animate>
+            <h3 class="widget-title">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+              استطلاع رأي
+            </h3>
+            <p class="poll-question">هل تؤيد قرارات وزير التعليم الجديدة بشأن الثانوية العامة؟</p>
+            <div class="poll-options">
+              <button class="poll-option" onclick="votePoll(this, 42)">
+                <span class="option-text">نعم، أؤيد بشدة</span>
+                <span class="option-bar" style="--pct: 0%"></span>
+              </button>
+              <button class="poll-option" onclick="votePoll(this, 28)">
+                <span class="option-text">أؤيد مع تحفظات</span>
+                <span class="option-bar" style="--pct: 0%"></span>
+              </button>
+              <button class="poll-option" onclick="votePoll(this, 20)">
+                <span class="option-text">لا أوافق</span>
+                <span class="option-bar" style="--pct: 0%"></span>
+              </button>
+              <button class="poll-option" onclick="votePoll(this, 10)">
+                <span class="option-text">لا أعلم</span>
+                <span class="option-bar" style="--pct: 0%"></span>
+              </button>
+            </div>
+          </div>
+ 
+          <!-- Podcast widget -->
+          <div class="card-widget" data-animate>
+            <h3 class="widget-title widget-title-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+              بودكاست الراديو
+            </h3>
+            <div class="podcast-list">
+              <div class="podcast-item news-card-hover">
+                <div class="podcast-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></div>
+                <div class="podcast-info">
+                  <h4>صباح الخبر</h4>
+                  <p>أحمد محمود • ٠٦:٠٠</p>
+                </div>
+                <button class="play-btn" title="تشغيل">▶</button>
+              </div>
+              <div class="podcast-item news-card-hover">
+                <div class="podcast-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></div>
+                <div class="podcast-info">
+                  <h4>نشرة الأخبار</h4>
+                  <p>سارة عبدالله • ٠٩:٠٠</p>
+                </div>
+                <button class="play-btn" title="تشغيل">▶</button>
+              </div>
+              <div class="podcast-item news-card-hover">
+                <div class="podcast-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></div>
+                <div class="podcast-info">
+                  <h4>حوار اليوم</h4>
+                  <p>محمد حسن • ١٢:٠٠</p>
+                </div>
+                <button class="play-btn" title="تشغيل">▶</button>
+              </div>
+              <div class="podcast-item news-card-hover">
+                <div class="podcast-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></div>
+                <div class="podcast-info">
+                  <h4>الملف الرياضي</h4>
+                  <p>خالد العلي • ١٥:٠٠</p>
+                </div>
+                <button class="play-btn" title="تشغيل">▶</button>
+              </div>
+            </div>
+          </div>
+ 
+        </aside>
+      </section>
+ 
+      <!-- Media Section -->
+      <section class="media-section">
+        <h2 class="section-title section-title-accent">الوسائط المتعددة</h2>
+        <div class="media-grid">
+ 
+          <div class="media-card news-card-hover" data-animate>
+            <div class="media-thumb">
+              <img src="https://images.unsplash.com/photo-1504711434969-e33886168d8c?w=400&h=240&fit=crop" alt="تغطية خاصة" loading="lazy">
+              <div class="media-overlay">
+                <div class="play-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+                </div>
+              </div>
+              <span class="media-duration">١٥:٣٢</span>
+              <span class="media-type media-type-video">فيديو</span>
+            </div>
+            <div class="media-info">
+              <h3>تغطية خاصة: التصعيد في الشرق الأوسط</h3>
+            </div>
+          </div>
+ 
+          <div class="media-card news-card-hover" data-animate>
+            <div class="media-thumb">
+              <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?w=400&h=240&fit=crop" alt="تحليل" loading="lazy">
+              <div class="media-overlay">
+                <div class="play-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+                </div>
+              </div>
+              <span class="media-duration">٢٢:١٠</span>
+              <span class="media-type media-type-video">فيديو</span>
+            </div>
+            <div class="media-info">
+              <h3>تحليل: مستقبل المفاوضات النووية الإيرانية</h3>
+            </div>
+          </div>
+ 
+          <div class="media-card news-card-hover" data-animate>
+            <div class="media-thumb">
+              <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=400&h=240&fit=crop" alt="بودكاست" loading="lazy">
+              <div class="media-overlay">
+                <div class="play-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg>
+                </div>
+              </div>
+              <span class="media-duration">٤٥:٠٠</span>
+              <span class="media-type media-type-podcast">بودكاست</span>
+            </div>
+            <div class="media-info">
+              <h3>بودكاست: أسبوع في السياسة</h3>
+            </div>
+          </div>
+ 
+          <div class="media-card news-card-hover" data-animate>
+            <div class="media-thumb">
+              <img src="https://images.unsplash.com/photo-1529243856184-fd5465488984?w=400&h=240&fit=crop" alt="مصر" loading="lazy">
+              <div class="media-overlay">
+                <div class="play-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+                </div>
+              </div>
+              <span class="media-duration">١٨:٤٥</span>
+              <span class="media-type media-type-video">فيديو</span>
+            </div>
+            <div class="media-info">
+              <h3>مصر: جهود الوساطة لحل أزمة غزة</h3>
+            </div>
+          </div>
+ 
+          <div class="media-card news-card-hover" data-animate>
+            <div class="media-thumb">
+              <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=400&h=240&fit=crop" alt="بودكاست الطاقة" loading="lazy">
+              <div class="media-overlay">
+                <div class="play-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg>
+                </div>
+              </div>
+              <span class="media-duration">٣٥:٢٠</span>
+              <span class="media-type media-type-podcast">بودكاست</span>
+            </div>
+            <div class="media-info">
+              <h3>بودكاست: اقتصاديات الطاقة في الخليج</h3>
+            </div>
+          </div>
+ 
+          <div class="media-card news-card-hover" data-animate>
+            <div class="media-thumb">
+              <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=240&fit=crop" alt="تقنية عسكرية" loading="lazy">
+              <div class="media-overlay">
+                <div class="play-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+                </div>
+              </div>
+              <span class="media-duration">١٢:٠٨</span>
+              <span class="media-type media-type-video">فيديو</span>
+            </div>
+            <div class="media-info">
+              <h3>التكنولوجيا العسكرية: القبة الحديدية</h3>
+            </div>
+          </div>
+ 
+        </div>
+      </section>
+ 
+    </div>
+  </main>
+ 
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-bg-glow footer-glow-right"></div>
+    <div class="footer-bg-glow footer-glow-left"></div>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h2 class="footer-logo"><span class="logo-primary">مُوجز</span><span>24</span></h2>
+          <p class="footer-desc">بوابتك الأولى لآخر الأخبار المحلية والعربية والدولية. تغطية شاملة على مدار الساعة.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="فيسبوك">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="تويتر">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="يوتيوب">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="انستجرام">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h3>روابط سريعة</h3>
+          <ul>
+            <li><a href="#">الرئيسية</a></li>
+            <li><a href="#">سياسة</a></li>
+            <li><a href="#">اقتصاد</a></li>
+            <li><a href="#">رياضة</a></li>
+            <li><a href="#">تكنولوجيا</a></li>
+            <li><a href="#">ثقافة</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>تواصل معنا</h3>
+          <div class="contact-list">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e881868e87a88587828992dadcc68b8785">[email&#160;protected]</a></p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 11.9a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.06 1h3a2 2 0 0 1 2 1.72A12.84 12.84 0 0 0 8.76 6.53a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z"/></svg>+٢٠ ١٢٣ ٤٥٦ ٧٨٩٠</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>القاهرة، مصر</p>
+          </div>
+        </div>
+        <div class="footer-newsletter">
+          <h3>النشرة البريدية</h3>
+          <p>اشترك ليصلك كل جديد</p>
+          <form class="newsletter-form" onsubmit="return subscribeNewsletter(event)">
+            <input type="email" placeholder="بريدك الإلكتروني" required class="newsletter-input">
+            <button type="submit" class="newsletter-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
+              اشترك الآن
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© ٢٠٢٦ مُوجز 24. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+ 
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+ 
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+  <nav class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <h2 class="logo-text"><span class="logo-primary">مُوجز</span><span class="logo-accent"> 24</span></h2>
+      <button class="mobile-nav-close" id="mobileNavClose">✕</button>
+    </div>
+    <a href="blog.html" class="mobile-nav-link">المدونة</a>
+    <a href="#" class="mobile-nav-link">غرفة الأخبار</a>
+    <a href="#" class="mobile-nav-link">حياة كريمة</a>
+    <a href="#" class="mobile-nav-link">مدارس وجامعات</a>
+    <a href="#" class="mobile-nav-link">المستقبل الرقمي</a>
+    <a href="#" class="mobile-nav-link">وثائقيات</a>
+    <a href="#" class="mobile-nav-link">صوت الشارع</a>
+    <a href="#" class="mobile-nav-link">أثير</a>
+  </nav>
+ 
+  <script src="script.js"></script>
+</body>
+</html>
